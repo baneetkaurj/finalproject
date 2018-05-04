@@ -38,7 +38,7 @@ class AuthServiceProvider extends ServiceProvider
 
 
         Gate::define('edit-question', function ($user) {   //since we are updating the current question, so we need the post model $post
-            return $user->hasAccess(['edit-question']) or $user->id == $question->user_id;
+            return $user->hasAccess(['edit-question']) ;
         });
         Gate::define('delete-question', function ($user) {
             return $user->hasAccess(['delete-question']);
