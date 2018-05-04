@@ -61,4 +61,20 @@ class User extends Authenticatable
         return $this->hasMany('App\Answer');
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users'); //one user can have many roles
+    }
+
+    public function hasAccess(array $permissions)
+    {
+        foreach($this->roles as $role){
+            if($role->hasAccess($permissions)){
+                return true;
+            }
+        }
+        return false;    //if the role has access to a permission, then it will return true or false
+    }
+
+
 }

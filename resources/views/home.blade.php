@@ -6,9 +6,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Questions
+                        @can('create-question')
                         <a class="btn btn-primary float-right" href="{{ route('questions.create') }}">
                             Create a Question
                         </a>
+                        @endcan
 
                         <div class="card-body">
 
