@@ -76,7 +76,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $roles=\App\Role::orderBy('name')->pluck('name','id');
-        print_r($roles);die;
+        //print_r($roles);die;
         return view('auth.register',compact('roles'));
     }
 }
