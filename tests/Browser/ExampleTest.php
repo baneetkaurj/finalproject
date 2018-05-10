@@ -20,4 +20,6 @@ class ExampleTest extends DuskTestCase
                     ->assertSee('Laravel');
         });
     }
+
+
 }
