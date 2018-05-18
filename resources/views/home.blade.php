@@ -31,7 +31,7 @@
                                             <div class="card-footer">
                                                 <p class="card-text">
 
-                                                    <a class="btn btn-primary float-right" href="{{ route('questions.show', ['id' => $question->id]) }}">
+                                                    <a id="view" class="btn btn-primary float-right" href="{{ route('questions.show', ['id' => $question->id]) }}">
                                                         View
                                                     </a>
                                                 </p>

@@ -13,7 +13,7 @@
                     </div>
                     <div class="card-footer">
                         @can('edit-question')
-                        <a id="view" class="btn btn-primary float-right"  value="view"
+                        <a class="btn btn-primary float-right"
                            href="{{ route('questions.edit',['id'=> $question->id])}}">
                             Edit Question
                         </a>

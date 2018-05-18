@@ -17,7 +17,7 @@ class LoginTest extends DuskTestCase
     {
                 $this->browse(function (Browser $browser) {
                     $browser->visit('/login')
-                        ->type('email', 'bani@google.com')
+                        ->type('email', 'bani@admin.com')
                         ->type('password', '123456')
                        ->press( 'Login')
                         ->assertPathIs('/home');

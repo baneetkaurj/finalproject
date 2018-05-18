@@ -17,21 +17,21 @@ class ViewQuestionTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                ->type('email', 'bani@admin.com')
+                ->type('email', 'bani@user.com')
                 ->type('password', '123456')
                 ->press( 'Login')
                 ->assertPathIs('/home');
 
             $browser->visit('/questions/create')
                 ->type('body', '123456')
-                ->press('Save');
+                ->press('Save')
+            ->assertPathIs('/home');
 
-            browser->visit('/home')
-
-            /*$browser->visit('/home')
-            ->click('#navbarDropdown')
-            ->click('#logout-form')
-            ->assertSee('Laravel');*/
+            $browser->visit('/home')
+            ->click('#view')
+            ->assertSee('Home')
+                ->assertSee('Delete')
+                ->assertSee('Edit Question');
 
 
 
